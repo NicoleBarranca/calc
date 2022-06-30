@@ -3,11 +3,26 @@ import React from "react";
 import { useReducer } from "react";
 
 function App() {
-  function reducer(state, { type, payload }) {}
+  const ACTIONS = {
+    ADD_DIGIT: "add-digit",
+    CHOOSE: "choose-operation",
+    CLEAR: "clear",
+    DELETE_DIGIT: "delete-digit",
+    EVALUATE: "evaluate",
+  };
+
+  function reducer(state, { type, payload }) {
+    switch (type) {
+      case ACTIONS.ADD_DIGIT:
+        return state;
+    }
+  }
+
   const [{ currentOperand, previousOperand, operation }, dispatch] = useReducer(
     reducer,
     {}
   );
+
   return (
     <div className="calculator-grid">
       <div className="output">
